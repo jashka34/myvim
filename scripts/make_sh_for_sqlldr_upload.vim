@@ -24,7 +24,10 @@ normal gg
 
 :let s:resSqlldrFileName  = s:schemaName.'/upload_all_csv_'.s:schemaName.'.sh'
 :let s:resCsvFileName     = s:schemaName.'/download_all_csv_'.s:schemaName.'.sh'
+:let s:nlsLang            = 'AMERICAN_AMERICA.AL32UTF8'
+:call insert(s:allShSqlldrCmd, 'export NLS_LANG='.s:nlsLang)
 :call insert(s:allShSqlldrCmd, s:schemaName.'_PWD='.s:schemaName)
+:call insert(s:allShCsvCmd,    'export NLS_LANG='.s:nlsLang)
 :call insert(s:allShCsvCmd,    s:schemaName.'_PWD='.s:schemaName)
 :let s:res1 = writefile(s:allShSqlldrCmd, s:resSqlldrFileName)
 :let s:res2 = writefile(s:allShCsvCmd,    s:resCsvFileName)

@@ -30,7 +30,7 @@ function XxMakeSqlldrCtl()
   call XxDelLine('^\s*GRANT\s\+.*ON\s\+.*$')
   call XxDelLine('^\s*COMMENT\s\+.*ON\s\+.*$')
   call append(0, bufname("%"))
-  :%s/^.*\/\(.*\).ctl$/OPTIONS (SKIP=1)\rLOAD DATA\rINFILE      'csv\/\1\.csv'\rBADFILE     \1\.bad\rDISCARDFILE \1\.dsc\rREPLACE\rINTO TABLE \1/
+  :%s/^.*\/\(.*\).ctl$/OPTIONS (SKIP=1)\rLOAD DATA\rINFILE      'csv\/\1\.csv'\rBADFILE     'bad\/\1\.bad'\rDISCARDFILE 'dsc\/\1\.dsc'\rREPLACE\rINTO TABLE \1/
   call append(line('.'), "FIELDS TERMINATED BY '|' OPTIONALLY ENCLOSED BY '\"' TRAILING NULLCOLS")
   :+2,$s/"//g
   :%s/\<NUMBER\>\((.*)\)*/integer external/g
