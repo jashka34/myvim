@@ -13,6 +13,10 @@ set imsearch=0
 set ruler                                   " в подстрочнике для каждого окна будет выводится инфа о % просмотренного
 set hlsearch                                " установка постоянной подстветки последнего поиска (выключается :noh)
 set shiftwidth=4                            " размер индента (работает по >)
+set tabstop=4                               " Определяет ширину символа табуляции.
+set smarttab                                " Когда жмёшь Tab добавляет пробелы в количестве shiftwidth (проверить так ли это)
+set expandtab                               " Ставим табы пробелами (на количество пробелов указанных в tabstop)
+set softtabstop=4                           " 4 пробела в табе
 highlight lCursor guifg=NONE guibg=Cyan     
 " nmap <Tab> <C-W><C-W>
 nmap <Tab>l <C-W>l                          " переключение между окнами по Tab-hjkl (потому что Ctrl-W hjkl неудобно)
