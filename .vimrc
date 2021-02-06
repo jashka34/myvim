@@ -18,6 +18,8 @@ set smarttab                                " Когда жмёшь Tab доба
 set expandtab                               " Ставим табы пробелами (на количество пробелов указанных в tabstop)
 set softtabstop=4                           " 4 пробела в табе
 set autoindent                              " После Enter строка начинается с индента предыдущей
+set nobackup
+set noswapfile
 highlight lCursor guifg=NONE guibg=Cyan     
 " nmap <Tab> <C-W><C-W>
 nmap <Tab>l <C-W>l                          " переключение между окнами по Tab-hjkl (потому что Ctrl-W hjkl неудобно)
